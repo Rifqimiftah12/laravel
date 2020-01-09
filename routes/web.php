@@ -52,7 +52,28 @@ return view('biodata');
 // return view('biodata5');
 // });
 
-
+//Route Parameter
 Route::get('/pesan/{makan}/{minum}/{harga}',function($mkn,$min,$hrg){
     return 'Makanan Yang Saya Pesan Adalah '.$mkn. '<br>Minum Saya '.$min.'<br>Harga '.$hrg;
+});
+
+//Route Optimal Parameter
+Route::get('halo/{nama?}',function($nama='Rifqi'){
+    return 'Halo Nama Saya Adalah '.$nama;
+});
+
+//Route Optimal Parameter
+Route::get('pesanan/{minuman?}/{makanan?}/{harga?}',function($min=null,$mkn=null,$hrg=null){
+    if (isset($min)) {
+        echo"Anda Memesan : ".$min;
+    }
+        if (isset($mkn)) {
+        echo" & ".$mkn;
+    }
+        if (isset($hrg)) {
+        echo" Dengan Harga : ".$hrg;
+    }
+    if ($min == null & $mkn == null & $hrg == null) {
+        echo"Anda Belum Memesan Makanan";
+    }
 });
