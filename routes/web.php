@@ -77,3 +77,39 @@ Route::get('pesanan/{minuman?}/{makanan?}/{harga?}',function($min=null,$mkn=null
         echo"Anda Belum Memesan Makanan";
     }
 });
+
+Route::get('/testmodel', function() {
+    $query = App\Post::all();
+    return $query;
+    });
+
+    Route::get('/testmodel', function() {
+        $query = App\Post::find(1);
+        return $query;
+    });
+
+    Route::get('/testmodel', function(){
+        $query = App\Post::where('title','like','%cepat nikah%')->get();
+        return $query;
+    });
+    Route::get('/testmodel', function(){
+        $post = App\Post::find(1);
+        $post->title = "Ciri Keluarga Sakinah";
+        $post->save();
+        return $post;
+    });
+    Route::get('/testmodel', function(){
+        $post = App\Post::find(1);
+        $post->delete();
+    });
+    Route::get('/testmodel', function(){
+        $post = new App\Post;
+        $post->title = "7 Amalan Pembuka Jodoh";
+        $post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+        $post->save();
+        return $post;
+    });
+    Route::get('/testt', function() {
+        $query = App\Penggajian::all();
+        return $query;
+        });
