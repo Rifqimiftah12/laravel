@@ -13,14 +13,14 @@ class CreatePenggajiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('penggajians', function (Blueprint $table) {
+        Schema::create('Penggajians', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('jabatan');
             $table->string('jk');
             $table->string('alamat');
             $table->string('agama');
-            $table->intenger('total_gaji');
+            $table->string('total_gaji');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreatePenggajiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penggajians');
+        Schema::dropIfExists('Penggajians');
     }
 }

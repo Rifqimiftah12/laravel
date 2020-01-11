@@ -109,7 +109,32 @@ Route::get('/testmodel', function() {
         $post->save();
         return $post;
     });
-    Route::get('/testt', function() {
+    Route::get('/tes', function() {
         $query = App\Penggajian::all();
         return $query;
-        });
+    });
+     Route::get('/data-gaji-1',function(){
+         $query = App\Penggajian::where('jabatan','=','Direktur')->get();
+         return $query;
+     });
+     Route::get('/data-gaji-2',function(){
+        $query = App\Penggajian::select('id','nama','jabatan')
+        ->where('jabatan','=','Hrd ')
+        ->get();
+        return $query;
+    });
+    Route::get('/data-gaji/{id}',function($id){
+        $query = App\Penggajian::find($id);
+        return $query;
+    });
+    Route::get('tambah-data-gaji', function(){
+        $gaji = new App\Penggajian();
+        $gaji->nama = 'Indah Mambo';
+        $gaji->jabatan = 'Sekertaris';
+        $gaji->jk = 'perempuan';
+        $gaji->alamat = 'Bojong Honey';
+        $gaji->total_gaji = '5000000';
+        $gaji->agama = 'Islam';
+        $gaji->save();
+        return $gaji;
+    });

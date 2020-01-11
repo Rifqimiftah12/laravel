@@ -12,11 +12,11 @@ class PostTablePenggajian extends Seeder
     public function run()
     {
         $posts = [
-            ['Nama'=>'Rifqi', 'Jabatan'=>'Direktur', 'Jenis Kelamin'=>'Laki-Laki', 'Alamat'=>'Kp.Sindang Palay', 'Agama'=>'Islam', 'Total Gaji'=>9000000],
-            ['Nama'=>'Fauzan', 'Jabatan'=>'Meneger', 'Jenis Kelamin'=>'Laki-Laki', 'Alamat'=>'Buah Batu', 'Agama'=>'Islam', 'Total Gaji'=>'5000000'],
-            ['Nama'=>'Alief', 'Jabatan'=>'Sekertaris', 'Jenis Kelamin'=>'Laki-Laki', 'Alamat'=>'TKI', 'Agama'=>'Islam', 'Total Gaji'=>'4000000'],
-            ['Nama'=>'Andrian', 'Jabatan'=>'Hrd', 'Jenis Kelamin'=>'Laki-Laki', 'Alamat'=>'Sukamenak', 'Agama'=>'Islam', 'Total Gaji'=>'4000000'],
-            ['Nama'=>'Hilmi', 'Jabatan'=>'Hrd', 'Jenis Kelamin'=>'Laki-Laki', 'Alamat'=>'Cibedug', 'Agama'=>'Islam', 'Total Gaji'=>'4000000']
+            ['nama'=>'Rifqi', 'jabatan'=>'Direktur', 'jk'=>'Laki-Laki', 'alamat'=>'Kp.Sindang Palay', 'agama'=>'Islam', 'total_gaji'=>'9000000'],
+            ['nama'=>'Fauzan', 'jabatan'=>'Meneger', 'jk'=>'Laki-Laki', 'alamat'=>'Buah Batu', 'agama'=>'Islam', 'total_gaji'=>'5000000'],
+            ['nama'=>'Alief', 'jabatan'=>'Sekertaris', 'jk'=>'Laki-Laki', 'alamat'=>'TKI', 'agama'=>'Islam', 'total_gaji'=>'4000000'],
+            ['nama'=>'Andrian', 'jabatan'=>'Hrd', 'jk'=>'Laki-Laki', 'alamat'=>'Sukamenak', 'agama'=>'Islam', 'total_gaji'=>'4000000'],
+            ['nama'=>'Hilmi', 'jabatan'=>'Hrd', 'jk'=>'Laki-Laki', 'alamat'=>'Cibedug', 'agama'=>'Islam', 'total_gaji'=>'4000000']
             ];
             // masukkan data ke database
             DB::table('Penggajians')->insert($posts);
