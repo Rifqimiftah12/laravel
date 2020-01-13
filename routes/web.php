@@ -138,3 +138,47 @@ Route::get('/testmodel', function() {
         $gaji->save();
         return $gaji;
     });
+
+    Route::get('haloo','SekolahController@hallo');
+
+    Route::get('haloo1','SekolahController@a');
+
+    Route::get('haloo2','SekolahController@b');
+
+    Route::get('haloo3','SekolahController@c');
+
+    Route::get('haloo4','SekolahController@d');
+
+    Route::get('haloo5','SekolahController@e');
+
+    Route::get('haloo6','SekolahController@f');
+
+    Route::get('haloo7','SekolahController@g');
+
+    Route::get('haloo8','SekolahController@h');
+
+    Route::get('warnakucing/{warna?}',function($warna=null){
+            if (isset($warna)) {
+            return" Nama Kucing kamu : ".$warna;
+        }
+        else{
+            return"Nama Kucing Kamu : ";
+        }
+    });
+
+    Route::get('beli/{iten?}/{harga?}',function($item=null,$harga=null){
+        if (isset($item)) {
+            return"Anda Memesan : ".$item;
+        }
+        if(isset($harga)){
+        if ($harga >= 15000) {
+            echo "Dengan Ukuran Jumbo ".$harga;
+        }elseif ($harga < 15000 && $harga >= 7500) {
+            echo "Dengan Ukuran Medium ".$harga;
+        }elseif($harga < 7500)
+            echo "Dengan Ukuran Small ".$harga;
+    }
+        if ($item == null & $harga == null) {
+            return"Silakan Masukan Item Terlebih Dahulu : ";
+        }
+    });
