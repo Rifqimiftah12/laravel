@@ -166,19 +166,33 @@ Route::get('/testmodel', function() {
         }
     });
 
-    Route::get('beli/{iten?}/{harga?}',function($item=null,$harga=null){
+    Route::get('/beli/{item?}/{harga?}',function($item=null,$harga=null){
         if (isset($item)) {
-            return"Anda Memesan : ".$item;
+            echo"Anda Memesan : ".$item ;
         }
         if(isset($harga)){
+
         if ($harga >= 15000) {
-            echo "Dengan Ukuran Jumbo ".$harga;
-        }elseif ($harga < 15000 && $harga >= 7500) {
-            echo "Dengan Ukuran Medium ".$harga;
-        }elseif($harga < 7500)
-            echo "Dengan Ukuran Small ".$harga;
+            echo " Dengan Ukuran Jumbo Harga ".$harga;
+        }
+        elseif ($harga < 15000 && $harga >= 7500) {
+            echo " Dengan Ukuran Medium Harga ".$harga;
+        }
+        elseif($harga < 7500  && $harga >= 1000){
+            echo " Dengan Ukuran Small Harga ".$harga;
+        }
+        else{
+            echo " Maaf Anda Memasukan Digit Yang Salah ";
+        }
     }
         if ($item == null & $harga == null) {
             return"Silakan Masukan Item Terlebih Dahulu : ";
         }
     });
+
+    Route::get('book','BookController@index');
+    Route::get('book-create/{jdl}','BookController@create');
+    Route::get('book-show/{id}','BookController@show');
+    Route::get('book-edit/{id}/{jdl}','BookController@edit');
+    Route::get('book-delete/{id}','BookController@delete');
+    Route::get('book-select','BookController@select');

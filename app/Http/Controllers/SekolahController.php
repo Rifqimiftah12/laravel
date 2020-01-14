@@ -62,13 +62,19 @@ class SekolahController extends Controller
 
     public function beli($item,$harga)
     {
+        if (isset($item)) {
+            return"Anda Memesan : ".$item;
+        }
         if(isset($harga)){
-            if ($harga >= 15000) {
-                echo "Dengan Ukuran Jumbo ".$harga;
-            }elseif ($harga < 15000 && $harga >= 7500) {
-                echo "Dengan Ukuran Medium ".$harga;
-            }elseif($harga < 7500)
-                echo "Dengan Ukuran Small ".$harga;
+        if ($harga >= 15000) {
+            echo "Dengan Ukuran Jumbo ";
+        }elseif ($harga < 15000 && $harga >= 7500) {
+            echo "Dengan Ukuran Medium ";
+        }elseif($harga < 7500)
+            echo "Dengan Ukuran Small ";
+    }
+        if ($item == null & $harga == null) {
+            return"Silakan Masukan Item Terlebih Dahulu : ";
         }
     }
 }
