@@ -196,3 +196,14 @@ Route::get('/testmodel', function() {
     Route::get('book-edit/{id}/{jdl}','BookController@edit');
     Route::get('book-delete/{id}','BookController@delete');
     Route::get('book-select','BookController@select');
+
+    //Artikel RESOURCE
+    // Route::get('artikel','ArtikelController@index');
+    // Route::get('artikel/create','ArtikelController@create');
+    // Route::get('artikel','ArtikelController@store');
+    // Route::get('artikel-show/{id}','ArtikelController@show');
+    // Route::get('artikel/{id}/edit','ArtikelController@edit');
+    // Route::PUT('artikel/{id}','ArtikelController@update');
+    // Route::DELETE('artikel/{id}','ArtikelController@story');
+
+    Route::resource('artikel','ArtikelController');
