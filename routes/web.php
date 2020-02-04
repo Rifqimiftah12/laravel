@@ -214,3 +214,5 @@ Route::get('/testmodel', function() {
     Route::get('passing1','PracticeController@pass1');
 
     Route::get('passing2','PracticeController@pass2');
+
+    Route::get('as','BarangController@index');
