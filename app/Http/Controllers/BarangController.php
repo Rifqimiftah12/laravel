@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Barang;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class BarangController extends Controller
 {
@@ -14,8 +15,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barang = Barang::all()->take(15);
-        return view('barang',['dabar' => $barang]);
+        $barang = Barang::all();
+        return view('barang.index', compact('barang'));
     }
 
     /**
@@ -45,9 +46,10 @@ class BarangController extends Controller
      * @param  \App\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show(Barang $barang)
+    public function show($id)
     {
-        //
+        $barang = Barang::findOrFail($id);
+        return view('barang.show', compact('barang'));
     }
 
     /**

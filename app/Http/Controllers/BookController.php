@@ -11,7 +11,7 @@ class BookController extends Controller
     public function index()
     {
         $book = PostsTableBook::all();
-        return $book;
+        return view('book.index', compact('book'));
     }
 
     public function create($jdl)
@@ -29,8 +29,8 @@ class BookController extends Controller
     }
     public function show($id)
     {
-        $book = PostsTableBook::find($id);
-        return $book;
+        $book = PostsTableBook::findOrFail($id);
+        return view('book.show', compact('book'));
     }
     public function edit($id, $jdl)
     {

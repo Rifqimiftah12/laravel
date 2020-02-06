@@ -216,3 +216,34 @@ Route::get('/testmodel', function() {
     Route::get('passing2','PracticeController@pass2');
 
     Route::get('as','BarangController@index');
+
+    //book route
+    Route::resource('buku','BookController');
+
+    //Barang Route
+    Route::resource('belanja','BarangController');
+
+    //Blade
+    Route::get('home',function(){
+        return view('home');
+    });
+
+    Route::get('about',function(){
+        return view('about');
+    });
+
+    Route::get('contact',function(){
+        return view('contact');
+    });
+
+    Route::get('book1',function(){
+        return view('book1');
+    });
+
+    Route::get('barang1',function(){
+        return view('barang1');
+    });
+
+    Route::get('utama',function(){
+        return view('utama');
+    });
